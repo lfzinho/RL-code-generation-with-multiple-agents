@@ -1,5 +1,5 @@
 import numpy as np
-from policies import EpsilonGreedyPolicy
+from rl.policies import EpsilonGreedyPolicy
 
 
 class Agent:
@@ -21,7 +21,7 @@ class Agent:
         self.action_counts = np.zeros(n_actions)
         self.action_total_rewards = np.zeros(n_actions)
     
-    def act(self):
+    def get_action(self):
         """
         Selects the action to take.
         """

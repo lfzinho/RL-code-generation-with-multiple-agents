@@ -1,7 +1,14 @@
 import numpy as np
+from abc import ABC, abstractmethod
 
 
-class EpsilonGreedyPolicy:
+class Policy(ABC):
+    @abstractmethod
+    def get_action(self, action_values):
+        pass
+
+    
+class EpsilonGreedyPolicy(Policy):
     def __init__(self, epsilon):
         self.epsilon = epsilon
 
