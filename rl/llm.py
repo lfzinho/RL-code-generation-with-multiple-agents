@@ -4,6 +4,7 @@ from rl.environment import Environment, Message
 class LLM:
     @staticmethod
     def generate_text(environment: Environment) -> str:
+        # Placeholder code to generate text
         return f"This is a generated text with the prompt: {environment.prompt}"
     
     @staticmethod
