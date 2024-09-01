@@ -16,5 +16,5 @@ class CodeEvaluator:
         self.environment.add_message(self.name, evaluation)
         return reward
     
-    def extract_numerical_evaluation(self, evaluation: str) -> int:
-        return int(evaluation.split()[-1])
+    def extract_numerical_evaluation(self, evaluation: str) -> float:
+        return float(evaluation.split()[-1])

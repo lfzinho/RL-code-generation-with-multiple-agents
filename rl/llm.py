@@ -1,3 +1,4 @@
+import numpy as np
 from rl.environment import Environment, Message
 
 
@@ -29,5 +30,6 @@ class LLM:
                 if text in message.content:
                     grade += value
                     break
+        grade += np.random.randn()  # Add some randomness to the grade
         
         return f"The code was graded as {grade}"
