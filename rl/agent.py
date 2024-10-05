@@ -18,8 +18,8 @@ class Agent:
         self.initial_value = initial_value
         self.policy = policy
         self.action_values = np.ones(n_actions) * initial_value
-        self.action_counts = np.zeros(n_actions)
-        self.action_total_rewards = np.zeros(n_actions)
+        self.action_counts = np.ones(n_actions)
+        self.action_total_rewards = np.ones(n_actions) * initial_value
     
     def get_action(self):
         """

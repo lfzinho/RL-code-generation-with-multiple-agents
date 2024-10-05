@@ -1,4 +1,4 @@
-from rl.environment import Environment, Message
+from rl.environment import Environment
 from rl.llm import LLM
 
 
@@ -11,10 +11,6 @@ class CodeEvaluator:
         self.llm = LLM()
     
     def evaluate_code(self):
-        evaluation = self.llm.evaluate_code(self.environment, self.prompt)
-        reward = self.extract_numerical_evaluation(evaluation)
-        self.environment.add_message(self.name, evaluation)
+        reward, message = self.llm.evaluate_code(self.environment, self.prompt)
+        self.environment.add_message(self.name, message)
         return reward
-    
-    def extract_numerical_evaluation(self, evaluation: str) -> float:
-        return float(evaluation.split()[-1])
