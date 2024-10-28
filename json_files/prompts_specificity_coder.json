@@ -1,0 +1,27 @@
+[
+  {
+    "propriedade": "specificity",
+    "valor": 1,
+    "prompt": "Write some python code to clean up a CSV file that has extra data, missing values etc."
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 2,
+    "prompt": "Write some Python code to clean up a CSV file (e.g., 'data.csv') containing extra data such as unnecessary rows or columns, replace missing values with specific ones, and format the output in a way that is easy to analyze."
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 3,
+    "prompt": "Write some Python code to clean up a CSV file ('data.csv'), removing unnecessary rows or columns (e.g., header information) and replacing missing data with specific values like 0 or NaN, then format the output for easier analysis.\n\nHere are some considerations:\n - The target output file should be named 'cleaned_data.csv'.\n - Use pandas to process the CSV. \n  - Format the cleaned output as concise and easily analyzable data."
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 4,
+    "prompt": "Write Python code to clean a CSV ('data.csv') for easier analysis, preparing the final file named 'cleaned_data.csv' .  Specifically include these steps:\n\n1. Remove unnecessary rows/columns including header information.\n2. Replace missing data values with specified ones like 0 or NaN\n3. Format the output as a concise and analyzable CSV format.\n\n**Tools:** Use pandas for this operation. \n**Considerations:** target output csv file to be named 'cleaned_data.csv'.  "
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 5,
+    "prompt": "Write Python code using pandas to clean the 'data.csv' CSV file, prepare it for analysis. Name the final cleaned file 'cleaned_data.csv'. \n Specifically:\n 1. Remove unnecessary rows and columns including the header information.\n 2. Replace missing data values with specified ones like 0 or NaN.\n 3. Format the output as a concise and analyzable CSV format.\n\n Tools: Use pandas to perform this operation and use 'cleaned_data.csv' for the final file creation. "
+  }
+]

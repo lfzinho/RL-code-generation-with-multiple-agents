@@ -1,0 +1,27 @@
+[
+  {
+    "propriedade": "size",
+    "valor": 1,
+    "prompt": "Please provide Python code to clean a dirty CSV file."
+  },
+  {
+    "propriedade": "size",
+    "valor": 2,
+    "prompt": "Provide me with Python code that cleans a messy CSV file. This code should include steps for handling missing data, identifying and removing duplicate rows, converting columns to the correct type (e.g., Date format).  Remember any necessary libraries (Pandas or others) should be imported"
+  },
+  {
+    "propriedade": "size",
+    "valor": 3,
+    "prompt": "I need a Python script that cleans my messy CSV file. It needs to handle missing data by using pandas techniques like imputation. The code should identify and remove duplicate rows, and convert columns like dates to the correct format.  Please make sure to mention any necessary libraries used like pandas, for example.  "
+  },
+  {
+    "propriedade": "size",
+    "valor": 4,
+    "prompt": "I need a Python script that cleans my messy CSV file (.csv) thoroughly.  It needs to account for missing data (e.g., NaN values) by using pandas features like imputation. The script should also identify and remove duplicate rows, and convert columns like dates into the proper dates format.  Additionally, it would be helpful to list the libraries used in the process such as pandas, numpy, etc.  \n"
+  },
+  {
+    "propriedade": "size",
+    "valor": 5,
+    "prompt": "Please provide a Python script that cleans a messy CSV file (e.g., .csv), ensuring data is handled correctly: **\n** - It should handle missing values accurately using pandas' imputation features.\n - Identify and remove duplicate rows.\n - Convert columns like dates into proper date format.\n - List the libraries you used in the process (like pandas, numpy, etc.).   It's crucial to understand if there are any specific challenges during data cleaning or preprocessing that might need special consideration.  The script should demonstrate a thorough cleaning process"
+  }
+]
