@@ -1,0 +1,27 @@
+[
+  {
+    "propriedade": "clarity",
+    "valor": 1,
+    "prompt": "I gotta clean up this messed-up CSV file...  Python, please! 🥺"
+  },
+  {
+    "propriedade": "clarity",
+    "valor": 2,
+    "prompt": "I need help cleaning up this messy CSV file using Python. Can you write a script that can handle the cleaning and data manipulation tasks efficiently?"
+  },
+  {
+    "propriedade": "clarity",
+    "valor": 3,
+    "prompt": "I need help cleaning up this messy CSV file using Python. You need to create a Python script that can clean and manipulate it efficiently. The file is currently unorganized and needs to be properly formatted."
+  },
+  {
+    "propriedade": "clarity",
+    "valor": 4,
+    "prompt": "I need your help cleaning up a messy CSV file in Python. I want a Python script that can: \n\n1. **Clean the data:** Remove empty rows and fix inconsistencies.\n2. **Format the data:** Make it properly organized with correct header labels and column formatting. "
+  },
+  {
+    "propriedade": "clarity",
+    "valor": 5,
+    "prompt": "I need help creating a Python script to clean up an inconsistent CSV file and format the results neatly. Here's what I envision my script doing:\n\n1. **Data cleaning:** Identify and remove any empty rows or cells from the data.\n2. **Format improvement:** Put the data into a well-organized structure. Use correct header labels, define meaningful column names, and format the content to be easy to understand."
+  }
+]
