@@ -1,0 +1,27 @@
+[
+    {
+      "propriedade": "prop2",
+      "valor": 1,
+      "prompt": "a"
+    },
+    {
+      "propriedade": "prop2",
+      "valor": 2,
+      "prompt": "b"
+    },
+    {
+      "propriedade": "prop2",
+      "valor": 3,
+      "prompt": "c"
+    },
+    {
+      "propriedade": "prop2",
+      "valor": 4,
+      "prompt": "d"
+    },
+    {
+      "propriedade": "prop2",
+      "valor": 5,
+      "prompt": "e"
+    }
+  ]
