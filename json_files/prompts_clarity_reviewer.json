@@ -1,0 +1,17 @@
+[
+  {
+    "propriedade": "clarity",
+    "valor": 1,
+    "prompt": "I need you to act as a code reviewer and check out this csv cleaning program. It's not looking good, so can you make the logic better? I don't really know what it's supposed to be doing. Just help me!"
+  },
+  {
+    "propriedade": "clarity",
+    "valor": 2,
+    "prompt": "Please review this CSV Cleaning Program Logic. I am unsure of its functionality and need feedback on how to improve the code. Specifically, tell me about any issues and suggested improvements when applying data cleaning best practices."
+  },
+  {
+    "propriedade": "clarity",
+    "valor": 3,
+    "prompt": "Please review the attached CSV file cleaning program logic. I'm uncertain about its efficiency and structure, and need help identifying potential areas for improvement. Focus on addressing issues from a data cleaning best practices standpoint. Here are some specific questions: \n\n* **Data Integrity**: Are the cleaning steps effectively handling missing values or any inconsistencies in data input? Is there potential for biased sampling that might affect results \n* **Efficiency**:  Do the operations lead to redundant outputs or an excessively lengthy processing time? Can the code be streamlined or optimized?\n* **Clean Code Conventions**:Is the code well organized and written with clear variable naming convention, documented functions with informative comments etc? Are there potential for readability issues and maintainability problems. \n\nPlease provide your analysis and recommended suggestions to improve the program's functionality.\n"
+  }
+]

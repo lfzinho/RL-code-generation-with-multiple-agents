@@ -1,0 +1,17 @@
+[
+  {
+    "propriedade": "complexity",
+    "valor": 1,
+    "prompt": "I need you to act as a code reviewer and analyze the provided Python code snippet to see if it cleans a CSV database. The code should be formatted by line ending with a space. Consider what might need revision or can improve efficiency in this script. Please provide your feedback in response with explanations for changes."
+  },
+  {
+    "propriedade": "complexity",
+    "valor": 2,
+    "prompt": "I need you to act as a code reviewer. Please analyze this Python code that performs basic data cleaning on a CSV database and tell me: \n\n* **Functionality**: Does the code successfully clean the data? Are there any potential issues or areas for improvement?\n* **Code Quality**: How would you rate this code's style, readability, and efficiency? Suggest any improvements to make it more robust, readable, and maintainable.\n* **Best Practices**: Are there any specific Python best practices or coding standards that should be applied to improve this code further?\n\n**Please consider the following when reviewing the code:** \n1. It cleans a CSV string using pandas.\n2. It uses numpy arrays for manipulation."
+  },
+  {
+    "propriedade": "complexity",
+    "valor": 3,
+    "prompt": "I need you to act as a code reviewer.  Please look over this Python script and identify any potential issues that might arise during data cleaning in a CSV database with Pandas, Dask, or SQLAlchemy. I'm particularly interested in: \n\n* **Code Structure**: Is the code well-organized? Could any improvements be made to enhance readability?\n* **Data Handling:** Are there any sections of the script that could benefit from being more structured for better data manipulation and flow within it?\n* **Efficiency & Optimization:** What are some strategies to make this code more efficient, especially in handling potentially large CSV datasets?"
+  }
+]

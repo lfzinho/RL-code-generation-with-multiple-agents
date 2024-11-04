@@ -1,0 +1,17 @@
+[
+  {
+    "propriedade": "size",
+    "valor": 1,
+    "prompt": "I need you to act as a code reviewer and analyze the following Python script, which attempts to clean a CSV database. Let me know your perspective on the logic and any potential improvements you notice. Be concise but thorough in your feedback."
+  },
+  {
+    "propriedade": "size",
+    "valor": 2,
+    "prompt": "Please review the provided Python script designed to clean a CSV database. Analyze the code's structure, logic for data processing, and identify potential areas for improvement in terms of efficiency, clarity or best practices. Please focus on brevity while providing comprehensive feedback, aiming to leave no stone unturned in your analysis. While brevity is appreciated, thoroughness ensures actionable insights can be extracted from all aspects of the code implementation."
+  },
+  {
+    "propriedade": "size",
+    "valor": 3,
+    "prompt": "Please review the provided Python script designed to clean a CSV database and analyze its effectiveness. Analyze the code's structure, logic for data processing, and **identify potential areas for improvement using best practices.** This includes considering efficiency, clarity, error handling, code readability, and scalability.**  **Focus on:** \n- **Brevity** in your analysis, while providing **comprehensive insights**.  \n- **Actionable steps** to improve the code's overall performance.\n   **Note:** The script provides a framework. You should strive to generate clean, efficient code that is easily adaptable and scalable for potential future expansions or new data inputs. "
+  }
+]

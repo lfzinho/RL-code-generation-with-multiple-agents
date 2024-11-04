@@ -1,0 +1,17 @@
+[
+  {
+    "propriedade": "specificity",
+    "valor": 1,
+    "prompt": "I need you to act as a code reviewer and look at this Python code. I'm hoping for your feedback on potential bugs or areas where the code could be improved in any way, shape, or form. Pay special attention to data handling and error-free execution!  Can you help review it? Please let me know!"
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 2,
+    "prompt": "Please review this Python code snippet and provide me with your feedback on potential bugs or areas for improvement.\n\nSpecifically, I'm interested in how the code handles data and ensures reliable error handling. Could you give specific suggestions as to what needs to be improved? How can I make it more robust? Thanks!"
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 3,
+    "prompt": "Please review the following Python code snippet (below) and provide your feedback on potential bugs or areas for improvement: \n\n* **How does the code handle data input securely and ensure error handling is appropriate?** \n* **Suggest specific ways to make it more robust:** \n    * How can you enhance data validation? \n    * Suggest any ways to optimize performance if required.\n    * Are there potential security vulnerabilities I could be aware of?"
+  }
+]
