@@ -74,7 +74,27 @@ def start_conversation(
         reviewer: LLMAgent, 
         refiner: LLMAgent, 
         max_turns:int=5
-    ):
+    ) -> Environment:
+    """Start a conversation between the coder, reviewer, refiner and evaluator.
+
+    Parameters
+    ----------
+    coder : Coder
+        The coder agent that will be used to generate the initial code.
+    coder_prompt : str
+        The prompt to be used by the coder agent.
+    reviewer : LLMAgent
+        The reviewer agent that will be used to evaluate the conversation.
+    refiner : LLMAgent
+        The refiner agent that will be used to refine the conversation.
+    max_turns : int, optional
+        The maximum number of turns that the conversation will last, by default 5.
+
+    Returns
+    -------
+    Environment
+        The final environment after the conversation.
+    """
     global evaluator
     environment = Environment()
     # Set the environment for all agents
@@ -103,3 +123,5 @@ def start_conversation(
         last_grade = grade
     # Reward the coder with the last grade
     coder.final_reward(last_grade)
+    # Return environment
+    return environment
