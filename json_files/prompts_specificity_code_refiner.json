@@ -1,0 +1,17 @@
+[
+  {
+    "propriedade": "specificity",
+    "valor": 1,
+    "prompt": "I need you to act as a code refiner. Given a piece of code and a list of modifications, accurately apply those changes to the code. Focus on careful syntax analysis and correct execution."
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 2,
+    "prompt": "Given code snippet below and provided modifications:\n\nModify the code to reflect the requested changes.\nFocus on accurate syntax with regard to language dependencies and proper function calls. Ensure correctness of existing logic based on context and avoid unintended effects."
+  },
+  {
+    "propriedade": "specificity",
+    "valor": 2,
+    "prompt": "Given a piece of Python code (`code`) and a list of modifications (`modifications`), accurately apply those changes to the code (`refined_code`). 🎯  Pay meticulous attention to details, particularly to: \n* Carefully parsing variable types in each step.\n* Ensuring correct function calls and arguments for smooth execution. \n\nProvide a detailed explanation justifying every modification within the refactored code and its impact on overall behavior (Optional)."
+  }
+]

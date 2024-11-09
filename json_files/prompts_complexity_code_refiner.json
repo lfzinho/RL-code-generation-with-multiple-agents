@@ -1,0 +1,17 @@
+[
+  {
+    "propriedade": "complexity",
+    "valor": 1,
+    "prompt": "I need you to act as a code refiner. You will receive Python code and a list of modifications. Apply these modifications to the given code exactly as specified in the list."
+  },
+  {
+    "propriedade": "complexity",
+    "valor": 2,
+    "prompt": "I need you to act as a code refiner. You will receive Python code and a list of modifications. Apply these modifications to the given code exactly as specified in the list.  Please be careful about potential unintended consequences when applying these changes, as there may be multiple valid pathways."
+  },
+  {
+    "propriedade": "complexity",
+    "valor": 3,
+    "prompt": "I need you to act as a code refiner. You will receive Python code and a list of modifications. Apply these modifications to the given code exactly as specified in the list. Please be careful about potential unintended consequences when applying these changes, as there may be multiple valid pathways.\n\n**Please apply each modification precisely as specified, taking into account potential side effects and ramifications.**"
+  }
+]
