@@ -1,51 +1,51 @@
 Series_Title,Released_Year,Runtime,Genre,IMDB_Rating,Meta_score,Director,No_of_Votes
-The Shawshank Redemption,nan,,,9.3,80.0,,nan
-The Godfather,,,"Crime, Drama",,,Francis Ford Coppola,
-The Dark Knight,2008,152 min,,nan,84.0,Christopher Nolan,nan
-The Godfather: Part II,1974,202 min,"Crime, Drama",9.0,90.0,Francis Ford Coppola,
-,,96 min,"Crime, Drama",,,,
-The Lord of the Rings: The Return of the King,2003,,,8.9,94.0,,1642758.0
-,1994,,,8.9,nan,Quentin Tarantino,nan
+The Shawshank Redemption,nan,142 min,,nan,nan,,nan
+,,175 min,,,,Francis Ford Coppola,
+The Dark Knight,,152 min,"Action, Crime, Drama",,,Christopher Nolan,
+,1974,202 min,"Crime, Drama",9.0,nan,Francis Ford Coppola,1129952.0
+12 Angry Men,1957,96 min,"Crime, Drama",nan,96.0,Sidney Lumet,nan
+The Lord of the Rings: The Return of the King,nan,,"Action, Adventure, Drama",8.9,94.0,Peter Jackson,nan
+Pulp Fiction,,,"Crime, Drama",,,Quentin Tarantino,
 Schindler's List,,,,,,Steven Spielberg,
-Inception,nan,,"Action, Adventure, Sci-Fi",8.8,nan,Christopher Nolan,2067042.0
-,nan,,Drama,nan,nan,,nan
-The Lord of the Rings: The Fellowship of the Ring,2001,178 min,"Action, Adventure, Drama",nan,92.0,Peter Jackson,1661481.0
-Forrest Gump,nan,,,nan,82.0,Robert Zemeckis,1809221.0
-,nan,,,8.8,nan,Sergio Leone,688390.0
-The Lord of the Rings: The Two Towers,2002,179 min,"Action, Adventure, Drama",nan,87.0,Peter Jackson,1485555.0
-The Matrix,,136 min,"Action, Sci-Fi",,,,
-Goodfellas,nan,,,8.7,nan,Martin Scorsese,nan
-Star Wars: Episode V - The Empire Strikes Back,,,"Action, Adventure, Fantasy",,,Irvin Kershner,
-One Flew Over the Cuckoo's Nest,,,Drama,,,Milos Forman,
-Hamilton,,160 min,"Biography, Drama, History",,,Thomas Kail,
-Gisaengchung,,132 min,"Comedy, Drama, Thriller",,,Bong Joon Ho,
-,nan,153 min,Drama,8.6,nan,Sudha Kongara,54995.0
-,,169 min,"Adventure, Drama, Sci-Fi",,,,
-Cidade de Deus,2002,,,8.6,nan,,699256.0
-Sen to Chihiro no kamikakushi,nan,125 min,"Animation, Adventure, Family",nan,nan,Hayao Miyazaki,nan
-Saving Private Ryan,1998,,,8.6,91.0,Steven Spielberg,1235804.0
-The Green Mile,,,"Crime, Drama, Fantasy",,,Frank Darabont,
-,1997,116 min,,nan,59.0,Roberto Benigni,623629.0
-,1995,127 min,,8.6,nan,David Fincher,nan
-,nan,118 min,"Crime, Drama, Thriller",8.6,85.0,,1270197.0
-,1977,,"Action, Adventure, Fantasy",8.6,90.0,George Lucas,nan
-Seppuku,1962,,,8.6,85.0,Masaki Kobayashi,42004.0
-Shichinin no samurai,,,"Action, Adventure, Drama",,,Akira Kurosawa,
-,nan,,,8.6,89.0,Frank Capra,405801.0
-,,,"Crime, Drama, Thriller",,,,
-,,,"Drama, Music",,,,
-The Intouchables,,,,,,,
-,,130 min,"Drama, Mystery, Sci-Fi",,,Christopher Nolan,
-,,151 min,,,,Martin Scorsese,
-The Pianist,2002,,,nan,85.0,Roman Polanski,729603.0
-Gladiator,2000,,"Action, Adventure, Drama",8.5,67.0,Ridley Scott,nan
-American History X,nan,119 min,Drama,nan,nan,Tony Kaye,1034705.0
-The Usual Suspects,,,"Crime, Mystery, Thriller",,,,
-Léon,,,"Action, Crime, Drama",,,,
-The Lion King,nan,,,nan,88.0,Roger Allers,942045.0
-Terminator 2: Judgment Day,,137 min,,,,,
-,,155 min,"Drama, Romance",,,,
-Hotaru no haka,,,,,,Isao Takahata,
-Back to the Future,,116 min,,,,,
-,1968,165 min,Western,nan,80.0,Sergio Leone,nan
-,,109 min,,,,,
+Inception,2010,148 min,,nan,nan,,nan
+Fight Club,nan,139 min,,8.8,66.0,,1854740.0
+The Lord of the Rings: The Fellowship of the Ring,nan,,,8.8,92.0,,nan
+Forrest Gump,,,"Drama, Romance",8.8,82.0,Robert Zemeckis,1809221.0
+,nan,161 min,Western,8.8,90.0,,688390.0
+,,179 min,"Action, Adventure, Drama",,,Peter Jackson,
+The Matrix,1999,136 min,"Action, Sci-Fi",nan,nan,Lana Wachowski,nan
+Goodfellas,1990,146 min,"Biography, Crime, Drama",8.7,nan,,nan
+,nan,124 min,,8.7,82.0,,1159315.0
+One Flew Over the Cuckoo's Nest,,133 min,,,,,
+Hamilton,,160 min,,,,Thomas Kail,
+Gisaengchung,2019,132 min,,8.6,96.0,,552778.0
+Soorarai Pottru,,153 min,,,,Sudha Kongara,
+Interstellar,,169 min,"Adventure, Drama, Sci-Fi",,,,
+Cidade de Deus,nan,130 min,,8.6,nan,,nan
+Sen to Chihiro no kamikakushi,nan,,"Animation, Adventure, Family",8.6,nan,,651376.0
+,,,"Drama, War",,,,
+The Green Mile,nan,189 min,"Crime, Drama, Fantasy",8.6,61.0,Frank Darabont,nan
+La vita è bella,,,"Comedy, Drama, Romance",,,Roberto Benigni,
+,,127 min,"Crime, Drama, Mystery",,,David Fincher,
+The Silence of the Lambs,1991,,"Crime, Drama, Thriller",8.6,85.0,,1270197.0
+,1977,121 min,,8.6,nan,,1231473.0
+,1962,133 min,"Action, Drama, Mystery",nan,85.0,Masaki Kobayashi,nan
+Shichinin no samurai,,207 min,"Action, Adventure, Drama",,,Akira Kurosawa,
+,,130 min,"Drama, Family, Fantasy",,,,
+,,122 min,"Crime, Drama, Thriller",,,Todd Phillips,
+,,,,,,Damien Chazelle,
+The Intouchables,nan,112 min,"Biography, Comedy, Drama",8.5,nan,,nan
+The Prestige,nan,130 min,"Drama, Mystery, Sci-Fi",8.5,nan,Christopher Nolan,1190259.0
+The Departed,2006,,"Crime, Drama, Thriller",8.5,nan,,1189773.0
+The Pianist,,150 min,,,,Roman Polanski,
+,nan,155 min,"Action, Adventure, Drama",8.5,67.0,,1341460.0
+,nan,,,nan,62.0,Tony Kaye,nan
+,,,"Crime, Mystery, Thriller",,,Bryan Singer,
+Léon,,,"Action, Crime, Drama",,,Luc Besson,
+,,88 min,"Animation, Adventure, Drama",,,,
+,1991,137 min,"Action, Sci-Fi",8.5,75.0,James Cameron,nan
+Nuovo Cinema Paradiso,,155 min,,,,Giuseppe Tornatore,
+,,89 min,"Animation, Drama, War",,,Isao Takahata,
+,,,"Adventure, Comedy, Sci-Fi",,,Robert Zemeckis,
+Once Upon a Time in the West,1968,165 min,,8.5,80.0,Sergio Leone,nan
+Psycho,,,,,,Alfred Hitchcock,
