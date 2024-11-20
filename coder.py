@@ -10,8 +10,8 @@ class Coder:
         self.name = "Coder"
         self.environment = environment
         self.prompts = prompts_props
-        self.start_rewards = {prompt_props['prompt']: [] for prompt_props in prompts_props}
-        self.end_rewards = {prompt_props['prompt']: [] for prompt_props in prompts_props}
+        self.start_rewards = {prompt_props['index']: [] for prompt_props in prompts_props}
+        self.end_rewards = {prompt_props['index']: [] for prompt_props in prompts_props}
         self.current_prompt = None
 
         self.llm = LLM()
@@ -24,13 +24,13 @@ class Coder:
         message : str
             The message to be added to the conversation
         """
-        self.current_prompt = prompt['prompt']
-        self.environment.set_prompt(self.current_prompt)
+        self.current_prompt = prompt['index']
+        self.environment.set_prompt(prompt['prompt'])
         message = self.llm.generate_text(self.environment)
         # Register the initial message
         initial_prompt_message = {
             "role": "User",
-            "content": self.current_prompt
+            "content": prompt['prompt']
         }
         self.environment.add_message(initial_prompt_message, 'User')
         # Register the response from the coder

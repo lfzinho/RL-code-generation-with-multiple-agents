@@ -1,5 +1,4 @@
 import tqdm
-import pandas as pd
 from coder import Coder
 from rl.llm_agent import LLMAgent
 from rl.environment import Environment
@@ -8,8 +7,9 @@ from rl.policies import EpsilonGreedyPolicy
 from rl.utils import compute_delta_grade, is_terminate_grade
 from csv_tools.csv_changer import change_csv
 
-CSV_PATH = "csv_tools/data.csv"
-csv_data = pd.read_csv(CSV_PATH).to_string()
+CSV_PATH = "csv_tools/imdb_sample_10.csv"
+with open(CSV_PATH, "r") as f:
+    csv_data = f.read()
 
 def_env = Environment()
 evaluator = CodeEvaluator(
@@ -74,12 +74,10 @@ def create_refiner(prompts: list[str]) -> LLMAgent:
 
 def start_conversation(
         coder: Coder, 
-        coder_prompt: dict, 
+        coder_prompt_dict: dict, 
         reviewer: LLMAgent, 
         refiner: LLMAgent, 
         max_turns: int = 5,
-        csv_path: str = "", 
-        clean_csv_path: str = ""
     ) -> Environment:
     """Start a conversation between the coder, reviewer, refiner and evaluator.
 
@@ -87,8 +85,8 @@ def start_conversation(
     ----------
     coder : Coder
         The coder agent that will be used to generate the initial code.
-    coder_prompt : str
-        The prompt to be used by the coder agent.
+    coder_prompt_dict : dict
+        The prompt dict to be used by the coder agent.
     reviewer : LLMAgent
         The reviewer agent that will be used to evaluate the conversation.
     refiner : LLMAgent
@@ -104,26 +102,23 @@ def start_conversation(
     global evaluator, csv_data
     environment = Environment()
     
-    # Set the clean CSV path in the evaluator
-    evaluator.clean_csv_path = clean_csv_path
-    
     # Set the environment for all agents
     for agent in [coder, reviewer, refiner, evaluator]:
         agent.environment = environment
     
     # Adding csv in the first coder prompt
-    coder_prompt["prompt"] += f"\n\nHere is the initial CSV content:\n{csv_data}"
-    coder.add_message(coder_prompt)
+    coder_prompt_dict = coder_prompt_dict.copy()
+    coder_prompt_dict["prompt"] += f"\n\nHere is the `imdb_sample_10.csv` file content:\n\n{csv_data}"
+    coder.add_message(coder_prompt_dict)
     
     # Start the conversation
     last_grade = None
     for turn in tqdm.tqdm(range(max_turns), desc="Conv. turns", position=1, leave=False):
         # Evaluates the code and status of the CSV
-        grade = evaluator.evaluate_code(csv_path)
+        grade = evaluator.evaluate_code()
         
         # Check if the score is enough to close
-        if grade >= 3:
-            print("CSV limpo! Terminando conversa.")
+        if is_terminate_grade(grade):
             break
         # If it is the first turn, reward the coder
         elif last_grade is None:
@@ -134,15 +129,9 @@ def start_conversation(
             refiner.reward(delta_grade)
             reviewer.reward(delta_grade)
         
-        # Update the CSV with the generated code
-        last_code_msg = environment.get_last_message(owner="Coder")["content"]
-        change_csv(last_code_msg, csv_path)
-        
-        # Reads the updated CSV and adds it to the next prompts for Reviewer and Refiner
-        csv_data = pd.read_csv(csv_path).to_string()
-        next_prompt = f"\n\nHere is the updated CSV content:\n{csv_data}"
-        reviewer.add_message(next_prompt)
-        refiner.add_message(next_prompt)
+        # Add reviewer and refiner messages to the conversation
+        reviewer.add_message()
+        refiner.add_message()
 
         last_grade = grade
 

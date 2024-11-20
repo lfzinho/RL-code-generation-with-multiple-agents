@@ -41,20 +41,20 @@ class CodeEvaluator:
         self.name = name
         self.clean_csv_path = clean_csv_path 
 
-    def evaluate_code(self, csv_path: str) -> int:
+    def evaluate_code(self) -> int:
         # Cleaning assessment
-        cleanliness_score = self.evaluate_cleanliness(csv_path)
+        #cleanliness_score = self.evaluate_cleanliness(csv_path)
 
         # Code Quality Assessment Using LLM
         last_code_msg = self.environment.get_last_message(owner="Coder")
         reduced_environment = [{"role": "User", "content": self.prompt + "\n" + last_code_msg['content']}]
-        reward, message = self.call_instructor_for_evaluation(reduced_environment)
+        rewards, message = self.call_instructor_for_evaluation(reduced_environment)
 
         # Adds feedback to the environment
         message = self.mark_name_on_message(message)
         self.environment.add_message(message, self.name)
 
-        return cleanliness_score
+        return rewards
 
     def evaluate_cleanliness(self, csv_path: str) -> int:
         df_dirty = pd.read_csv(csv_path)
