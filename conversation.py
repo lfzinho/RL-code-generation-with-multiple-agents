@@ -1,11 +1,15 @@
 import tqdm
+import pandas as pd
 from coder import Coder
 from rl.llm_agent import LLMAgent
 from rl.environment import Environment
 from rl.code_evaluator import CodeEvaluator
 from rl.policies import EpsilonGreedyPolicy
 from rl.utils import compute_delta_grade, is_terminate_grade
+from csv_tools.csv_changer import change_csv
 
+CSV_PATH = "csv_tools/data.csv"
+csv_data = pd.read_csv(CSV_PATH).to_string()
 
 def_env = Environment()
 evaluator = CodeEvaluator(
@@ -70,10 +74,12 @@ def create_refiner(prompts: list[str]) -> LLMAgent:
 
 def start_conversation(
         coder: Coder, 
-        coder_prompt:str, 
+        coder_prompt: dict, 
         reviewer: LLMAgent, 
         refiner: LLMAgent, 
-        max_turns:int=5
+        max_turns: int = 5,
+        csv_path: str = "", 
+        clean_csv_path: str = ""
     ) -> Environment:
     """Start a conversation between the coder, reviewer, refiner and evaluator.
 
@@ -95,33 +101,52 @@ def start_conversation(
     Environment
         The final environment after the conversation.
     """
-    global evaluator
+    global evaluator, csv_data
     environment = Environment()
+    
+    # Set the clean CSV path in the evaluator
+    evaluator.clean_csv_path = clean_csv_path
+    
     # Set the environment for all agents
     for agent in [coder, reviewer, refiner, evaluator]:
         agent.environment = environment
+    
+    # Adding csv in the first coder prompt
+    coder_prompt["prompt"] += f"\n\nHere is the initial CSV content:\n{csv_data}"
+    coder.add_message(coder_prompt)
+    
     # Start the conversation
     last_grade = None
-    coder.add_message(coder_prompt)
     for turn in tqdm.tqdm(range(max_turns), desc="Conv. turns", position=1, leave=False):
-        # Code is evaluated
-        grade = evaluator.evaluate_code()
-        # If grade is terminate, break the loop
-        if is_terminate_grade(grade):
+        # Evaluates the code and status of the CSV
+        grade = evaluator.evaluate_code(csv_path)
+        
+        # Check if the score is enough to close
+        if grade >= 3:
+            print("CSV limpo! Terminando conversa.")
             break
         # If it is the first turn, reward the coder
         elif last_grade is None:
             coder.first_reward(grade)
-        # If it is not the first turn, reward refiner and reviewer
+        # If it is not the first turn, reward refiner and reviewer    
         else:
             delta_grade = compute_delta_grade(last_grade, grade)
             refiner.reward(delta_grade)
             reviewer.reward(delta_grade)
-        # Keeps the conversation going
-        reviewer.add_message()
-        refiner.add_message()
+        
+        # Update the CSV with the generated code
+        last_code_msg = environment.get_last_message(owner="Coder")["content"]
+        change_csv(last_code_msg, csv_path)
+        
+        # Reads the updated CSV and adds it to the next prompts for Reviewer and Refiner
+        csv_data = pd.read_csv(csv_path).to_string()
+        next_prompt = f"\n\nHere is the updated CSV content:\n{csv_data}"
+        reviewer.add_message(next_prompt)
+        refiner.add_message(next_prompt)
+
         last_grade = grade
-    # Reward the coder with the last grade
+
+    # Reward the Coder with the latest review
     coder.final_reward(last_grade)
-    # Return environment
-    return environment
+    
+    return environment    

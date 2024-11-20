@@ -1,0 +1,51 @@
+Series_Title,Released_Year,Runtime,Genre,IMDB_Rating,Meta_score,Director,No_of_Votes
+The Shawshank Redemption,1994,142 min,Drama,9.3,80.0,Frank Darabont,2343110
+The Godfather,1972,175 min,"Crime, Drama",9.2,100.0,Francis Ford Coppola,1620367
+The Dark Knight,2008,152 min,"Action, Crime, Drama",9.0,84.0,Christopher Nolan,2303232
+The Godfather: Part II,1974,202 min,"Crime, Drama",9.0,90.0,Francis Ford Coppola,1129952
+12 Angry Men,1957,96 min,"Crime, Drama",9.0,96.0,Sidney Lumet,689845
+The Lord of the Rings: The Return of the King,2003,201 min,"Action, Adventure, Drama",8.9,94.0,Peter Jackson,1642758
+Pulp Fiction,1994,154 min,"Crime, Drama",8.9,94.0,Quentin Tarantino,1826188
+Schindler's List,1993,195 min,"Biography, Drama, History",8.9,94.0,Steven Spielberg,1213505
+Inception,2010,148 min,"Action, Adventure, Sci-Fi",8.8,74.0,Christopher Nolan,2067042
+Fight Club,1999,139 min,Drama,8.8,66.0,David Fincher,1854740
+The Lord of the Rings: The Fellowship of the Ring,2001,178 min,"Action, Adventure, Drama",8.8,92.0,Peter Jackson,1661481
+Forrest Gump,1994,142 min,"Drama, Romance",8.8,82.0,Robert Zemeckis,1809221
+"Il buono, il brutto, il cattivo",1966,161 min,Western,8.8,90.0,Sergio Leone,688390
+The Lord of the Rings: The Two Towers,2002,179 min,"Action, Adventure, Drama",8.7,87.0,Peter Jackson,1485555
+The Matrix,1999,136 min,"Action, Sci-Fi",8.7,73.0,Lana Wachowski,1676426
+Goodfellas,1990,146 min,"Biography, Crime, Drama",8.7,90.0,Martin Scorsese,1020727
+Star Wars: Episode V - The Empire Strikes Back,1980,124 min,"Action, Adventure, Fantasy",8.7,82.0,Irvin Kershner,1159315
+One Flew Over the Cuckoo's Nest,1975,133 min,Drama,8.7,83.0,Milos Forman,918088
+Hamilton,2020,160 min,"Biography, Drama, History",8.6,90.0,Thomas Kail,55291
+Gisaengchung,2019,132 min,"Comedy, Drama, Thriller",8.6,96.0,Bong Joon Ho,552778
+Soorarai Pottru,2020,153 min,Drama,8.6,,Sudha Kongara,54995
+Interstellar,2014,169 min,"Adventure, Drama, Sci-Fi",8.6,74.0,Christopher Nolan,1512360
+Cidade de Deus,2002,130 min,"Crime, Drama",8.6,79.0,Fernando Meirelles,699256
+Sen to Chihiro no kamikakushi,2001,125 min,"Animation, Adventure, Family",8.6,96.0,Hayao Miyazaki,651376
+Saving Private Ryan,1998,169 min,"Drama, War",8.6,91.0,Steven Spielberg,1235804
+The Green Mile,1999,189 min,"Crime, Drama, Fantasy",8.6,61.0,Frank Darabont,1147794
+La vita è bella,1997,116 min,"Comedy, Drama, Romance",8.6,59.0,Roberto Benigni,623629
+Se7en,1995,127 min,"Crime, Drama, Mystery",8.6,65.0,David Fincher,1445096
+The Silence of the Lambs,1991,118 min,"Crime, Drama, Thriller",8.6,85.0,Jonathan Demme,1270197
+Star Wars,1977,121 min,"Action, Adventure, Fantasy",8.6,90.0,George Lucas,1231473
+Seppuku,1962,133 min,"Action, Drama, Mystery",8.6,85.0,Masaki Kobayashi,42004
+Shichinin no samurai,1954,207 min,"Action, Adventure, Drama",8.6,98.0,Akira Kurosawa,315744
+It's a Wonderful Life,1946,130 min,"Drama, Family, Fantasy",8.6,89.0,Frank Capra,405801
+Joker,2019,122 min,"Crime, Drama, Thriller",8.5,59.0,Todd Phillips,939252
+Whiplash,2014,106 min,"Drama, Music",8.5,88.0,Damien Chazelle,717585
+The Intouchables,2011,112 min,"Biography, Comedy, Drama",8.5,57.0,Olivier Nakache,760360
+The Prestige,2006,130 min,"Drama, Mystery, Sci-Fi",8.5,66.0,Christopher Nolan,1190259
+The Departed,2006,151 min,"Crime, Drama, Thriller",8.5,85.0,Martin Scorsese,1189773
+The Pianist,2002,150 min,"Biography, Drama, Music",8.5,85.0,Roman Polanski,729603
+Gladiator,2000,155 min,"Action, Adventure, Drama",8.5,67.0,Ridley Scott,1341460
+American History X,1998,119 min,Drama,8.5,62.0,Tony Kaye,1034705
+The Usual Suspects,1995,106 min,"Crime, Mystery, Thriller",8.5,77.0,Bryan Singer,991208
+Léon,1994,110 min,"Action, Crime, Drama",8.5,64.0,Luc Besson,1035236
+The Lion King,1994,88 min,"Animation, Adventure, Drama",8.5,88.0,Roger Allers,942045
+Terminator 2: Judgment Day,1991,137 min,"Action, Sci-Fi",8.5,75.0,James Cameron,995506
+Nuovo Cinema Paradiso,1988,155 min,"Drama, Romance",8.5,80.0,Giuseppe Tornatore,230763
+Hotaru no haka,1988,89 min,"Animation, Drama, War",8.5,94.0,Isao Takahata,235231
+Back to the Future,1985,116 min,"Adventure, Comedy, Sci-Fi",8.5,87.0,Robert Zemeckis,1058081
+Once Upon a Time in the West,1968,165 min,Western,8.5,80.0,Sergio Leone,302844
+Psycho,1960,109 min,"Horror, Mystery, Thriller",8.5,97.0,Alfred Hitchcock,604211
