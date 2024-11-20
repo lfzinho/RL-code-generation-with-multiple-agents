@@ -6,6 +6,7 @@ from rl.code_evaluator import CodeEvaluator
 from rl.policies import EpsilonGreedyPolicy
 from rl.utils import compute_delta_grade, is_terminate_grade
 from csv_tools.csv_changer import change_csv
+from IPython.display import display, Markdown
 
 CSV_PATH = "csv_tools/imdb_sample_10.csv"
 with open(CSV_PATH, "r") as f:
@@ -110,7 +111,7 @@ def start_conversation(
     coder_prompt_dict = coder_prompt_dict.copy()
     coder_prompt_dict["prompt"] += f"\n\nHere is the `imdb_sample_10.csv` file content:\n\n{csv_data}"
     coder.add_message(coder_prompt_dict)
-    
+
     # Start the conversation
     last_grade = None
     for turn in tqdm.tqdm(range(max_turns), desc="Conv. turns", position=1, leave=False):

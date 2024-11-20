@@ -5,6 +5,7 @@ from openai import OpenAI
 from instructor.exceptions import InstructorRetryException
 from pydantic import BaseModel, Field
 from rl.environment import Environment
+from IPython.display import display, Markdown
 
 
 class CodeEvaluation(BaseModel):
@@ -49,6 +50,7 @@ class CodeEvaluator:
         last_code_msg = self.environment.get_last_message(owner="Coder")
         reduced_environment = [{"role": "User", "content": self.prompt + "\n" + last_code_msg['content']}]
         rewards, message = self.call_instructor_for_evaluation(reduced_environment)
+        display(Markdown(f"**Code Grade**: {message['content']}"))
 
         # Adds feedback to the environment
         message = self.mark_name_on_message(message)

@@ -4,6 +4,7 @@ from rl.agent import Agent
 from rl.policies import Policy
 from rl.environment import Environment
 from rl.llm import LLM
+from IPython.display import display, Markdown
 
 
 class LLMAgent:
@@ -22,6 +23,7 @@ class LLMAgent:
         self.last_action = prompt_idx
         self.environment.set_prompt(prompt)
         message = self.llm.generate_text(self.environment)
+        display(Markdown(f"**{self.name}**: {message['content']}"))
         message = self.mark_name_on_message(message)
         self.environment.add_message(message, self.name)
 

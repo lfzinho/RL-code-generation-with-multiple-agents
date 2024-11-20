@@ -1,5 +1,6 @@
 from rl.environment import Environment
 from rl.llm import LLM
+from IPython.display import display, Markdown
 
 
 class Coder:
@@ -32,8 +33,10 @@ class Coder:
             "role": "User",
             "content": prompt['prompt']
         }
+        display(Markdown(f"**Initial prompt**: {prompt['prompt']}"))
         self.environment.add_message(initial_prompt_message, 'User')
         # Register the response from the coder
+        display(Markdown(f"**Coder**: {message['content']}"))
         message = self.mark_name_on_message(message)
         self.environment.add_message(message, self.name)
 
