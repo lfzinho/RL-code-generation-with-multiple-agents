@@ -20,7 +20,6 @@ class CodeEvaluation(BaseModel):
     are_columns_correct: bool = Field(..., description="A boolean indicating whether all the analyzed columns exist in the. And consider checking the following columns: Series_Title, Released_Year, Runtime, Genre, IMDB_Rating, Meta_score, Director, and No_of_Votes.")
     overall_grade: int = Field(..., description="A score from 0 to 100 indicating the overall code quality. This should consider the boolean values just as well as other factors not covered by them.")
     explanation: str = Field(..., description="A summary of the evaluation. Why are the scores true or false? What can be improved?")
-    required_columns: List[str] = Field(..., description="A list of column names expected to be in the CSV file.")
 
     def get_mean_grade(self) -> int:
         return (np.mean([
