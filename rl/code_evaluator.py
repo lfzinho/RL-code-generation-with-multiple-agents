@@ -5,6 +5,7 @@ from openai import OpenAI
 from instructor.exceptions import InstructorRetryException
 from pydantic import BaseModel, Field
 from rl.environment import Environment
+from typing import List
 
 CSV_PATH = "csv_data/imdb_sample_10.csv"
 
@@ -16,8 +17,10 @@ class CodeEvaluation(BaseModel):
     is_csv_path_correct: bool = Field(..., description=f"A boolean indicating if the csv path is correct. The correct path is '{CSV_PATH}'.")
     is_code_all_grouped: bool = Field(..., description="A boolean indicating if the code is all grouped. If the code is split into multiple cells, this should be False.")
     is_code_saving_csv: bool = Field(..., description="A boolean indicating if the code is saving the csv file.")
+    are_columns_correct: bool = Field(..., description="A boolean indicating whether all the analyzed columns exist in the. And consider checking the following columns: Series_Title, Released_Year, Runtime, Genre, IMDB_Rating, Meta_score, Director, and No_of_Votes.")
     overall_grade: int = Field(..., description="A score from 0 to 100 indicating the overall code quality. This should consider the boolean values just as well as other factors not covered by them.")
     explanation: str = Field(..., description="A summary of the evaluation. Why are the scores true or false? What can be improved?")
+    required_columns: List[str] = Field(..., description="A list of column names expected to be in the CSV file.")
 
     def get_mean_grade(self) -> int:
         return (np.mean([
@@ -28,6 +31,7 @@ class CodeEvaluation(BaseModel):
             self.is_csv_path_correct,
             self.is_code_all_grouped,
             self.is_code_saving_csv,
+            self.are_columns_correct,
         ]) + self.overall_grade/100) / 2 * 100
     
     def get_answer(self) -> str:
@@ -38,6 +42,7 @@ class CodeEvaluation(BaseModel):
 **CSV Path Correct**: {self.is_csv_path_correct}
 **Code All Grouped**: {self.is_code_all_grouped}
 **Code Saving CSV**: {self.is_code_saving_csv}
+**Columns Correct**: {self.are_columns_correct}
 
 **Overall Grade**: {self.overall_grade}
 **Explanation**: {self.explanation}"""
