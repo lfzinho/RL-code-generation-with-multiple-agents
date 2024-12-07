@@ -6,22 +6,41 @@ from instructor.exceptions import InstructorRetryException
 from pydantic import BaseModel, Field
 from rl.environment import Environment
 
+CSV_PATH = "csv_data/imdb_sample_10.csv"
 
 class CodeEvaluation(BaseModel):
-    correctness_grade: int = Field(..., description="A grade from 0 to 100 for the correctness of the code.")
-    explanation_correctness: str = Field(..., description="A brief explanation of the correctness grade.")
-    readability_grade: int = Field(..., description="A grade from 0 to 100 for the readability of the code.")
-    explanation_readability: str = Field(..., description="A brief explanation of the readability grade.")
+    is_code_functional: bool = Field(..., description="A boolean indicating if the code is functional.")
+    is_code_consise: bool = Field(..., description="A boolean indicating if the code is consise.")
+    is_code_easily_readable: bool = Field(..., description="A boolean indicating if the code is easily readable.")
+    is_code_documented: bool = Field(..., description="A boolean indicating if the code is documented.")
+    is_csv_path_correct: bool = Field(..., description=f"A boolean indicating if the csv path is correct. The correct path is '{CSV_PATH}'.")
+    is_code_all_grouped: bool = Field(..., description="A boolean indicating if the code is all grouped. If the code is split into multiple cells, this should be False.")
+    is_code_saving_csv: bool = Field(..., description="A boolean indicating if the code is saving the csv file.")
+    overall_grade: int = Field(..., description="A score from 0 to 100 indicating the overall code quality. This should consider the boolean values just as well as other factors not covered by them.")
+    explanation: str = Field(..., description="A summary of the evaluation. Why are the scores true or false? What can be improved?")
 
     def get_mean_grade(self) -> int:
-        return np.mean([self.correctness_grade, self.readability_grade])
+        return (np.mean([
+            self.is_code_functional,
+            self.is_code_consise,
+            self.is_code_easily_readable,
+            self.is_code_documented,
+            self.is_csv_path_correct,
+            self.is_code_all_grouped,
+            self.is_code_saving_csv,
+        ]) + self.overall_grade/100) / 2 * 100
     
     def get_answer(self) -> str:
-        return f"""**Correctness:** {self.correctness_grade}
-\n**Grade Explanation:** {self.explanation_correctness}
+        return f"""**Code Functional**: {self.is_code_functional}
+**Code Consise**: {self.is_code_consise}
+**Code Easily Readable**: {self.is_code_easily_readable}
+**Code Documented**: {self.is_code_documented}
+**CSV Path Correct**: {self.is_csv_path_correct}
+**Code All Grouped**: {self.is_code_all_grouped}
+**Code Saving CSV**: {self.is_code_saving_csv}
 
-**Readability:** {self.readability_grade}
-\n**Grade Explanation:** {self.explanation_readability}"""
+**Overall Grade**: {self.overall_grade}
+**Explanation**: {self.explanation}"""
     
 
 class CodeEvaluator:

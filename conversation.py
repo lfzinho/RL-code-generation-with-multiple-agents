@@ -1,13 +1,11 @@
-import tqdm
+from tqdm.notebook import trange, tqdm
 from coder import Coder
 from rl.llm_agent import LLMAgent
 from rl.environment import Environment
-from rl.code_evaluator import CodeEvaluator
+from rl.code_evaluator import CodeEvaluator, CSV_PATH
 from rl.policies import EpsilonGreedyPolicy
 from rl.utils import compute_delta_grade, is_terminate_grade
-from csv_tools.csv_changer import change_csv
 
-CSV_PATH = "csv_tools/imdb_sample_10.csv"
 with open(CSV_PATH, "r") as f:
     csv_data = f.read()
 
@@ -108,12 +106,12 @@ def start_conversation(
     
     # Adding csv in the first coder prompt
     coder_prompt_dict = coder_prompt_dict.copy()
-    coder_prompt_dict["prompt"] += f"\n\nHere is the `imdb_sample_10.csv` file content:\n\n{csv_data}"
+    coder_prompt_dict["prompt"] += f"\n\nMy csv file path is '{CSV_PATH}'. This is the file content:\n\n{csv_data}"
     coder.add_message(coder_prompt_dict)
     
     # Start the conversation
     last_grade = None
-    for turn in tqdm.tqdm(range(max_turns), desc="Conv. turns", position=1, leave=False):
+    for turn in tqdm(range(max_turns), desc="Conv. turns", position=1, leave=False):
         # Evaluates the code and status of the CSV
         grade = evaluator.evaluate_code()
         
