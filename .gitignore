@@ -1,4 +1,7 @@
 **/__pycache__/**
 .venv
 /models/**
+/results/**
+results.zip
+/history/**
 /conversations/**

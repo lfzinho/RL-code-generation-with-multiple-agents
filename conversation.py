@@ -106,11 +106,12 @@ def start_conversation(
     
     # Adding csv in the first coder prompt
     coder_prompt_dict = coder_prompt_dict.copy()
-    coder_prompt_dict["prompt"] += f"\n\nMy csv file path is '{CSV_PATH}'. This is the file content:\n\n{csv_data}"
+    coder_prompt_dict["prompt"] += f"\n\nFile content:\n\n{csv_data}"
     coder.add_message(coder_prompt_dict)
     
     # Start the conversation
     last_grade = None
+    last_code_content = None
     for turn in tqdm(range(max_turns), desc="Conv. turns", position=1, leave=False):
         # Evaluates the code and status of the CSV
         grade = evaluator.evaluate_code()
@@ -121,19 +122,21 @@ def start_conversation(
         # If it is the first turn, reward the coder
         elif last_grade is None:
             coder.first_reward(grade)
+            last_code_content = environment.get_last_message("Coder")["content"]
         # If it is not the first turn, reward refiner and reviewer    
         else:
+            last_code_content = environment.get_last_message("Code Refiner")["content"]
             delta_grade = compute_delta_grade(last_grade, grade)
             refiner.reward(delta_grade)
             reviewer.reward(delta_grade)
         
         # Add reviewer and refiner messages to the conversation
-        reviewer.add_message()
-        refiner.add_message()
+        last_code_content = reviewer.add_message(last_code_content)
+        refiner.add_message(last_code_content)
 
         last_grade = grade
 
     # Reward the Coder with the latest review
     coder.final_reward(last_grade)
     
-    return environment    
+    return environment, reviewer.get_history(), refiner.get_history(), last_grade

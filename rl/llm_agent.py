@@ -16,14 +16,16 @@ class LLMAgent:
         self.llm = LLM()
         self.last_action = None
 
-    def add_message(self) -> Tuple[str, int]:
+    def add_message(self, code_before = "") -> str:
         prompt_idx = self.agent.get_action()
-        prompt = self.prompts[prompt_idx]
+        prompt = self.prompts[prompt_idx] + "\n\nHere's message with the code:" + code_before
         self.last_action = prompt_idx
         self.environment.set_prompt(prompt)
         message = self.llm.generate_text(self.environment)
         message = self.mark_name_on_message(message)
         self.environment.add_message(message, self.name)
+
+        return message['content']
 
     def reward(self, reward: int):
         self.agent.update(self.last_action, reward)
@@ -31,3 +33,6 @@ class LLMAgent:
     def mark_name_on_message(self, message: dict):
         message['content'] = f"Sent by {self.name}: \n\n{message['content']}"
         return message
+    
+    def get_history(self):
+        return self.agent.history

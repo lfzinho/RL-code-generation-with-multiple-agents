@@ -20,6 +20,8 @@ class Agent:
         self.action_values = np.ones(n_actions) * initial_value
         self.action_counts = np.ones(n_actions)
         self.action_total_rewards = np.ones(n_actions) * initial_value
+        self.step = 1
+        self.history = {0: self.action_total_rewards.copy() }
     
     def get_action(self):
         """
@@ -34,6 +36,8 @@ class Agent:
         self.action_counts[action] += 1
         self.action_total_rewards[action] += reward
         self.action_values[action] = self.action_total_rewards[action] / self.action_counts[action]
+        self.history[self.step] = self.action_total_rewards.copy() / self.action_counts
+        self.step += 1
     
     def reset(self):
         """
@@ -41,3 +45,4 @@ class Agent:
         """
         self.action_values = np.ones(self.n_actions) * self.initial_value
         self.action_counts = np.zeros(self.n_actions)
+    
